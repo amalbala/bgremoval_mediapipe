@@ -2,6 +2,12 @@
 
 The goal here is using mediapipe to generate a background removal/shifter for normal images.
 
+## Dependencies
+
+* Mediapipe
+* OpencV
+* Numpy
+
 ## Run the script:
 
 * To generate a transparent png images:
