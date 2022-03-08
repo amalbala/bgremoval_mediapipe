@@ -43,7 +43,7 @@ def parse_args() -> argparse.Namespace:
         type=float,
         required=False,
         help="thresshold to classify foreground and background",
-        default=0.0,
+        default=0.1,
     )
 
     args = parser.parse_args()
@@ -106,15 +106,17 @@ def main(args):
                 (image.shape[0], image.shape[1]), dtype=np.uint8
             )
             opaque_layer = np.ones((image.shape[0], image.shape[1]), dtype=np.uint8)
-
+            condition = np.stack(results.segmentation_mask, axis=0) > args.thresshold
             output_image = np.where(condition, opaque_layer, transparent_layer)
             transparent_image = np.dstack((image, (output_image * 255)))
             transparent_image = resize_ratio(transparent_image)
-            cv2.imwrite("output.png", transparent_image)
+            cv2.imwrite("output_alpha.png", transparent_image)
 
         else:
             background = cv2.imread(args.background)
             output_image = np.where(condition, image, background)
+            output_image = resize_ratio(output_image)
+            cv2.imwrite("output_background.png", output_image)
             cv2.imshow("main", output_image)
             cv2.waitKey(0)
 
