@@ -23,9 +23,7 @@ The goal here is using mediapipe to generate a background removal/shifter for no
 
 `python bgremover.py -i ./images/image.jpg -b ./images/background.jpg -t 0.2`
 
-<img src=https://user-images.githubusercontent.com/1952508/157209602-cbf821b0-60a5-490f-866f-56899641a368.jpg  width="256">
-<img src=https://user-images.githubusercontent.com/1952508/157206774-a03b0745-f9b9-4903-9eb0-762b169efd1b.png  width="256">
-<img src=https://user-images.githubusercontent.com/1952508/157209344-6ad3203d-5944-4752-a675-81af0050278a.png  width="256">
+<img src=https://user-images.githubusercontent.com/1952508/157209602-cbf821b0-60a5-490f-866f-56899641a368.jpg  width="256"><img src=https://user-images.githubusercontent.com/1952508/157206774-a03b0745-f9b9-4903-9eb0-762b169efd1b.png  width="256"><img src=https://user-images.githubusercontent.com/1952508/157209344-6ad3203d-5944-4752-a675-81af0050278a.png  width="256">
 
 ## License
 
